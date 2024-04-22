@@ -2,7 +2,7 @@
 {
     public static class Triangle
     {
-        public static TriangleType GetTypeBySides(decimal a, decimal b, decimal c)
+        public static TriangleType GetTypeBySides(double a, double b, double c)
         {
             if (IsValidBySides(a, b, c))
             {
@@ -25,22 +25,22 @@
             return TriangleType.Degenerate;
         }
 
-        public static bool IsEquilateral(decimal a, decimal b, decimal c)
+        public static bool IsEquilateral(double a, double b, double c)
         {
             return a == b && a == c && b == c;
         }
 
-        public static bool IsIsosceles(decimal a, decimal b, decimal c)
+        public static bool IsIsosceles(double a, double b, double c)
         {
             return a == b || a == c || b == c;
         }
 
-        public static bool IsScalene(decimal a, decimal b, decimal c)
+        public static bool IsScalene(double a, double b, double c)
         {
             return a != b && a != c && b != c;
         }
 
-        public static bool IsValidBySides(decimal a, decimal b, decimal c)
+        public static bool IsValidBySides(double a, double b, double c)
         {
             return (a + b) > c && (a + c) > b && (b + c) > a;
         }

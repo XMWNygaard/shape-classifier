@@ -1,8 +1,8 @@
 ﻿namespace ShapeIdentifier
 {
-    public class Triangle : ITriangle
+    public static class Triangle
     {
-        public TriangleType GetTypeBySides(float a, float b, float c)
+        public static TriangleType GetTypeBySides(decimal a, decimal b, decimal c)
         {
             if (IsValidBySides(a, b, c))
             {
@@ -25,22 +25,22 @@
             return TriangleType.Degenerate;
         }
 
-        public bool IsEquilateral(float a, float b, float c)
+        public static bool IsEquilateral(decimal a, decimal b, decimal c)
         {
             return a == b && a == c && b == c;
         }
 
-        public bool IsIsosceles(float a, float b, float c)
+        public static bool IsIsosceles(decimal a, decimal b, decimal c)
         {
             return a == b || a == c || b == c;
         }
 
-        public bool IsScalene(float a, float b, float c)
+        public static bool IsScalene(decimal a, decimal b, decimal c)
         {
             return a != b && a != c && b != c;
         }
 
-        public bool IsValidBySides(float a, float b, float c)
+        public static bool IsValidBySides(decimal a, decimal b, decimal c)
         {
             return (a + b) > c && (a + c) > b && (b + c) > a;
         }
